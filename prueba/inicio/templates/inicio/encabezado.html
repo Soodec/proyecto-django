@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %} {% endblock %} </title>
+</head>
+<body>
+    <a href="{%url 'Principal' %}">Inicio</a>
+    <a href="{%url 'Registrar' %}">Registrar</a>
+    <a href="{%url 'Contacto' %}">Contactanos</a>
+    <!--Contenido-->
+    {% block contenido %} <!--Template Tag-->
+    <!--block sirve para indicar que colocaremos un bloque de contenido a través de nuestra variable content-->
+    {% endblock %}
+</body>
+</html>
