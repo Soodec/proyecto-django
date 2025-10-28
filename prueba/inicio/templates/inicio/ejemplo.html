@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-{% block titulo %} {% endblock %}
+<title>Plantilla</title>
 
 {% load static %}
 
@@ -59,21 +59,12 @@
 
 		<!-- Barra de menú -->
 		<div class="sidebar">
-            <div class="user-menu dropdown">
-                <a href="#">
-                    <img src="{% block imagen %}{% endblock %}">
-                    <div class="user-info">
-                        {% block encabezado %}{% endblock %} <span>DSM</span>
-                    </div>
-                </a>
-            </div>
-            
 			<div class="sidebar-content">
 				<!-- Menú de navegación -->
 				<ul class="navigation">
 							<li><a href="{%url 'Principal' %}">Principal</a></li>
 							<li><a href="{%url 'Registrar' %}">Registro</a></li>	
-							<li><a href="{%url 'Contacto' %}">Contacto</a></li>	
+							<li><a href="{%url 'Contacto' %}">Registro</a></li>	
 				</ul>
 				<!-- /Fin menú -->
 			</div>
@@ -83,25 +74,9 @@
 
 		
 	</div>
-	<div class="page-content">
 
 	{% block contenido %} <!--Template Tag-->
     <!--block sirve para indicar que colocaremos un bloque de contenido a través de nuestra variable content-->
     {% endblock %}
-	<div class="breadcrumb-line">
-		<ul class="breadcrumb">
-			<a href="{%url 'Principal' %}">
-				{%if request.path == '/' %}
-						Principal
-				{%else%}
-					Principal{{request.path}}
-				{%endif%}
-			</a>
-
-		</ul>
-	</div>
-
-
-	</div>
 </body>
 </html>

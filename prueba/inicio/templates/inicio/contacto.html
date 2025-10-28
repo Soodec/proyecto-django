@@ -1,4 +1,40 @@
- <h1>Contacto</h1>
-    <p> Nombre: <input type="text" name="nombre"></p>
-    <p> Mensaje: <textarea name="mensaje"></textarea></p>
-    <p> <input type="Button" name="Enviar" value="Enviar"></p>
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %} <title>Contacto</title> {% endblock %}
+
+{% block encabezado %} Contacto {% endblock %}
+
+{% block imagen %}
+    {% load static %}
+    {% static 'inicio/images/contacto.png' %}
+{% endblock %}
+
+{% block contenido %}
+
+			<!--Encabezdo -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>Contactanos
+				    <small>Ingresa tus datos</small></h3>
+				</div>
+			</div>
+			<!-- /Encabezado-->
+            <form class="form-horizontal" action="#" role="form">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                <div class="form-group">
+				            <label class="col-sm-2 control-label text-right">Nombre:</label>
+				            <div class="col-sm-10">
+				            	<input type="text" class="form-control">
+				            </div>
+				        </div>
+                <div class="form-group">
+				            <label class="col-sm-2 control-label text-right">Mensaje:</label>
+				            <div class="col-sm-10">
+				            	<textarea rows="10" required style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+				            </div>
+				        </div>
+                <div class="form-actions text-right">
+                	<input type="submit" value="Enviar" class="btn btn-primary">
+                </div>
+{% endblock %}
