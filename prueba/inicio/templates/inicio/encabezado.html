@@ -84,10 +84,7 @@
 		
 	</div>
 	<div class="page-content">
-
-	{% block contenido %} <!--Template Tag-->
-    <!--block sirve para indicar que colocaremos un bloque de contenido a través de nuestra variable content-->
-    {% endblock %}
+	{% block arriba %} {% endblock %}
 	<div class="breadcrumb-line">
 		<ul class="breadcrumb">
 			<a href="{%url 'Principal' %}">
@@ -100,6 +97,10 @@
 
 		</ul>
 	</div>
+	{% block contenido %} <!--Template Tag-->
+    <!--block sirve para indicar que colocaremos un bloque de contenido a través de nuestra variable content-->
+    {% endblock %}
+	
 
 
 	</div>
