@@ -1,0 +1,54 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %} <title>Comentarios</title> {% endblock %}
+
+{% block encabezado %} Comentarios {% endblock %}
+
+{% block imagen %}
+    {% load static %}
+    {% static 'inicio/images/contacto.png' %}
+{% endblock %}
+{% block arriba %}
+			<div class="page-header">
+				<div class="page-title">
+					<h3>Comentarios
+				    <small>Comentarios de contacto</small></h3>
+				</div>
+			</div>
+{% endblock %}
+{% block contenido %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h6 class="panel-title">Listado de comentarios</h6>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Mensaje</th>
+                    <th></th>       
+                    <th></th>     
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in comentarios %}
+                <tr>
+                    <td>{{ c.usuario }}</td>
+                    <td>{{ c.mensaje }}</td>
+                    <td><a href="{%url 'ConsultaIndividual' c.id%}">Editar</a></td>   
+                    <td> <a href="{% url 'Eliminar' c.id %}">Eliminar</a></td>      
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">No hay comentarios registrados.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+			
+            
+            
+{% endblock %}

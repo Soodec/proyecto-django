@@ -1,0 +1,33 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %} <title>Eliminar</title>  {% endblock %}
+
+{% block imagen %}
+    {% load static %}
+    {% static 'inicio/images/home.png' %}
+{% endblock %}
+{% block encabezado %} Eliminar {% endblock %}
+{% block arriba %}
+
+			<div class="page-header">
+				<div class="page-title">
+					<h3>Eliminar Comentario</h3>
+				</div>
+			</div>
+
+{% endblock %}
+{% block contenido %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h6 class="panel-title">Eliminar Comentario</h6>
+                </div>
+                <div class="panel-body">
+                    <p>¿Estás seguro de <strong>Eliminar</strong> el comentario?</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                        <a href="{% url 'ComentariosContacto' %}" class="btn btn-default">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+{% endblock %}

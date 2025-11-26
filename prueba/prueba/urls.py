@@ -17,11 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from inicio import views
+from django.conf import settings
+from registros import views as views_registros
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('principal/',views.principal,name="Principal"),
-    path('contacto/',views.contacto, name="Contacto"),
-    path('registrar/',views.registrar,name="Registrar"),
-    path('ejemplo/',views.ejemplo,name="ejemplo")
+    path('',views_registros.principal,name="Principal"),
+    path('contacto/',views_registros.contacto, name="Contacto"),
+    path('Registrar/',views.registrar,name="Registrar"),
+    path('ejemplo/',views.ejemplo,name="ejemplo"),
+    path('registrarF/', views_registros.registrarF,name="RegistrarF"),
+    path('comentarios/', views_registros.comentarios_contacto, name="ComentariosContacto"),
+    path('eliminarComentarioContacto/<int:id>', views_registros.eliminarComentarioContacto, name="Eliminar"),
+    path('formEditarComentario/<int:id>/',views_registros.consultarComentarioIndividual, name='ConsultaIndividual'),
+    path('editarComentario/<int:id>/',views_registros.editarComentarioContacto,name='Editar'),
 ]
